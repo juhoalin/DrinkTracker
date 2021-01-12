@@ -9,7 +9,7 @@ import UIKit
 
 class TrackerVC: UIViewController {
     
-    var promilleSection = Section(orderID: 0, type: "promilleSection", title: "You", containers: [Container(floatValue: 0.7, stringValue: nil)])
+    var promilleSection = Section(orderID: 0, type: "promilleSection", title: "You", containers: [Container(floatValue: 0.7, stringValue: nil), Container(floatValue: nil, stringValue: nil)])
     
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Container>?
@@ -36,6 +36,7 @@ class TrackerVC: UIViewController {
         collectionView.backgroundColor = .systemBackground
         view.addSubview(collectionView)
         
+        collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseIdentifier)
         collectionView.register(PromilleCell.self, forCellWithReuseIdentifier: PromilleCell.reuseIdentifier)
     }
     
@@ -106,13 +107,18 @@ class TrackerVC: UIViewController {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(250))
+        let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(180))
         let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: layoutGroupSize, subitems: [layoutItem])
         
         let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
         layoutSection.orthogonalScrollingBehavior = .groupPagingCentered
+        layoutSection.boundarySupplementaryItems = [createSectionHeader()]
         
         return layoutSection
+    }
+    
+    func createStatBoxSection(using section: Section) {
+        
     }
     
     func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {

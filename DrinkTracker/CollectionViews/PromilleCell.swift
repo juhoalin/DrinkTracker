@@ -15,6 +15,7 @@ class PromilleCell: UICollectionViewCell, SelfConfiguringCell {
     let numberLabel = UILabel()
     let infoLabel = UILabel()
     let addButton = UIButton(type: .custom)
+    let infostackView = UIStackView()
     
     let elementPadding: CGFloat = 20
     let innerElementPadding: CGFloat = 20
@@ -24,6 +25,7 @@ class PromilleCell: UICollectionViewCell, SelfConfiguringCell {
         configureElementView()
         configureNumberLabel()
         configureInfoLabel()
+        configureInfoStackView()
         configureAddButton()
     }
     
@@ -32,7 +34,10 @@ class PromilleCell: UICollectionViewCell, SelfConfiguringCell {
     }
     
     func configure(with container: Container) {
-        numberLabel.text = "\(container.floatValue ?? 0.0)‰"
+        let attString1 = NSMutableAttributedString(string: "\(container.floatValue ?? 0.0) ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 70, weight: .heavy), NSAttributedString.Key.foregroundColor: UIColor.systemGreen])
+        let attString2 = NSMutableAttributedString(string: "‰", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 50, weight: .bold), NSAttributedString.Key.foregroundColor: UIColor.secondaryLabel])
+        attString1.append(attString2)
+        numberLabel.attributedText = attString1
     }
     
     func configureElementView() {
@@ -43,62 +48,61 @@ class PromilleCell: UICollectionViewCell, SelfConfiguringCell {
         
         NSLayoutConstraint.activate([
             elementView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: elementPadding),
-            elementView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: elementPadding),
+            elementView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
             elementView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -elementPadding),
             elementView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -elementPadding),
         ])
     }
     
     func configureNumberLabel() {
-        numberLabel.font = UIFont.systemFont(ofSize: 45, weight: .bold)
+        numberLabel.font = UIFont.systemFont(ofSize: 45, weight: .heavy)
         numberLabel.textColor = .label
         numberLabel.adjustsFontSizeToFitWidth = true
-        numberLabel.translatesAutoresizingMaskIntoConstraints = false
         elementView.addSubview(numberLabel)
-        
-        numberLabel.backgroundColor = .systemBlue
-        numberLabel.text = "Test"
-        
-        NSLayoutConstraint.activate([
-            numberLabel.leadingAnchor.constraint(equalTo: elementView.leadingAnchor, constant: innerElementPadding),
-            numberLabel.topAnchor.constraint(equalTo: elementView.topAnchor, constant: innerElementPadding),
-            numberLabel.widthAnchor.constraint(equalToConstant: 150),
-            numberLabel.heightAnchor.constraint(equalToConstant: 100)
-        ])
     }
     
     func configureInfoLabel() {
-        infoLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
+        infoLabel.font = UIFont.preferredFont(forTextStyle: .headline)
         infoLabel.textColor = .secondaryLabel
         infoLabel.text = "Estimated Intoxication"
-        infoLabel.translatesAutoresizingMaskIntoConstraints = false
         elementView.addSubview(infoLabel)
-        
-        infoLabel.backgroundColor = .systemGreen
+    }
+    
+    func configureInfoStackView() {
+        infostackView.addArrangedSubview(numberLabel)
+        infostackView.addArrangedSubview(infoLabel)
+        infostackView.axis = .vertical
+        infostackView.distribution = .fill
+        infostackView.translatesAutoresizingMaskIntoConstraints = false
+        elementView.addSubview(infostackView)
         
         NSLayoutConstraint.activate([
-            infoLabel.leadingAnchor.constraint(equalTo: elementView.leadingAnchor, constant: innerElementPadding),
-            infoLabel.topAnchor.constraint(equalTo: numberLabel.bottomAnchor, constant: innerElementPadding),
-            infoLabel.bottomAnchor.constraint(equalTo: elementView.bottomAnchor, constant: -innerElementPadding),
-            infoLabel.trailingAnchor.constraint(equalTo: numberLabel.trailingAnchor)
+            infostackView.leadingAnchor.constraint(equalTo: elementView.leadingAnchor, constant: innerElementPadding),
+            infostackView.topAnchor.constraint(equalTo: elementView.topAnchor, constant: innerElementPadding),
+            infostackView.bottomAnchor.constraint(equalTo: elementView.bottomAnchor, constant: -innerElementPadding),
+            infostackView.widthAnchor.constraint(equalTo: elementView.widthAnchor, multiplier: 0.6)
         ])
     }
     
     func configureAddButton() {
-        let iconConfig = UIImage.SymbolConfiguration(pointSize: 50, weight: .bold)
+        let iconConfig = UIImage.SymbolConfiguration(pointSize: 70, weight: .bold)
         addButton.setImage(UIImage.init(systemName: "plus", withConfiguration: iconConfig), for: .normal)
         addButton.tintColor = .label
-        addButton.contentVerticalAlignment = .fill
-        addButton.contentHorizontalAlignment = .fill
+        addButton.showsTouchWhenHighlighted = true
+        addButton.addTarget(self, action: #selector(addButtonAction), for: .touchUpInside)
         addButton.translatesAutoresizingMaskIntoConstraints = false
         elementView.addSubview(addButton)
         
         NSLayoutConstraint.activate([
-            addButton.centerYAnchor.constraint(equalTo: elementView.centerYAnchor),
-            addButton.heightAnchor.constraint(equalToConstant: 100),
+            addButton.topAnchor.constraint(equalTo: elementView.topAnchor, constant: innerElementPadding),
+            addButton.leadingAnchor.constraint(equalTo: infostackView.trailingAnchor, constant: innerElementPadding),
             addButton.trailingAnchor.constraint(equalTo: elementView.trailingAnchor, constant: -innerElementPadding),
-            addButton.widthAnchor.constraint(equalToConstant: 100)
+            addButton.bottomAnchor.constraint(equalTo: elementView.bottomAnchor, constant: -innerElementPadding)
         ])
+    }
+    
+    @objc func addButtonAction() {
+    
     }
     
 }

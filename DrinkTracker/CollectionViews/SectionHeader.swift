@@ -20,20 +20,20 @@ class SectionHeader: UICollectionReusableView {
         separatator.translatesAutoresizingMaskIntoConstraints = false
         separatator.backgroundColor = .quaternaryLabel
         
-        title.textColor = .label
-        title.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 22, weight: .bold))
+        title.textColor = .secondaryLabel
+        title.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 28, weight: .bold))
         
-        let stackView = UIStackView(arrangedSubviews: [separatator, title])
+        let stackView = UIStackView(arrangedSubviews: [title])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         addSubview(stackView)
         
         NSLayoutConstraint.activate([
             separatator.heightAnchor.constraint(equalToConstant: 1),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
         
         stackView.setCustomSpacing(10, after: separatator)

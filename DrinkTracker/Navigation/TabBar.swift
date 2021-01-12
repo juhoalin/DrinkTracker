@@ -7,12 +7,12 @@
 
 import UIKit
 
-let home = UITabBarItem(title: nil, image: K.Icons.home, selectedImage: K.Icons.homeFilled)
-let chart = UITabBarItem(title: nil, image: K.Icons.chart, selectedImage: K.Icons.chartFilled)
-let person = UITabBarItem(title: nil, image: K.Icons.person, selectedImage: K.Icons.personFilled)
-
 class TabBar: UITabBarController {
-
+    
+    let home = UITabBarItem(title: nil, image: K.Icons.home, selectedImage: K.Icons.homeFilled)
+    let chart = UITabBarItem(title: nil, image: K.Icons.chart, selectedImage: K.Icons.chartFilled)
+    let person = UITabBarItem(title: nil, image: K.Icons.person, selectedImage: K.Icons.personFilled)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTabBar()
@@ -21,18 +21,21 @@ class TabBar: UITabBarController {
 
     func createDrinkVC() -> UINavigationController {
         let vc = TrackerVC()
+        vc.title = "Tracker"
         vc.tabBarItem = home
         return UINavigationController(rootViewController: vc)
     }
     
     func createStatisticsVC() -> UINavigationController {
         let statVC = StatisticsVC()
+        statVC.title = "Statistics"
         statVC.tabBarItem = chart
         return UINavigationController(rootViewController: statVC)
     }
     
     func createSettingsVC() -> UINavigationController {
         let  setVC = SettingsVC()
+        setVC.title = "Settings"
         setVC.tabBarItem = person
         return UINavigationController(rootViewController: setVC)
     }
