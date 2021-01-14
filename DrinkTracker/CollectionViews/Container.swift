@@ -8,6 +8,7 @@
 import Foundation
 
 struct Container: Hashable {
+    let id: Int
     let floatValue: Float?
     let stringValue: String?
 }

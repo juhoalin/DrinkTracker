@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC5515FC25B0F093002E2F3E /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5515FB25B0F093002E2F3E /* FriendCell.swift */; };
 		EC71152925AE0EF10061C9BA /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC71152825AE0EF10061C9BA /* SectionHeader.swift */; };
 		EC71152C25AE6A650061C9BA /* StatBoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC71152B25AE6A650061C9BA /* StatBoxCell.swift */; };
 		ECEE4A9125AA5BB600D767E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEE4A9025AA5BB600D767E9 /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC5515FB25B0F093002E2F3E /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		EC71152825AE0EF10061C9BA /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		EC71152B25AE6A650061C9BA /* StatBoxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatBoxCell.swift; sourceTree = "<group>"; };
 		ECEE4A8D25AA5BB600D767E9 /* DrinkTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +111,7 @@
 				ECF92E7625AD237D0072F92C /* Container.swift */,
 				EC71152825AE0EF10061C9BA /* SectionHeader.swift */,
 				EC71152B25AE6A650061C9BA /* StatBoxCell.swift */,
+				EC5515FB25B0F093002E2F3E /* FriendCell.swift */,
 			);
 			path = CollectionViews;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				ECF92E7725AD237D0072F92C /* Container.swift in Sources */,
 				ECEE4AA825AA5C9000D767E9 /* TabBar.swift in Sources */,
 				EC71152C25AE6A650061C9BA /* StatBoxCell.swift in Sources */,
+				EC5515FC25B0F093002E2F3E /* FriendCell.swift in Sources */,
 				ECEE4A9525AA5BB600D767E9 /* ViewController.swift in Sources */,
 				ECEE4AAF25AA63C600D767E9 /* TrackerVC.swift in Sources */,
 				ECF92E7425AD23080072F92C /* Section.swift in Sources */,

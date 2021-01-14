@@ -13,11 +13,12 @@ class StatBoxCell: UICollectionViewCell, SelfConfiguringCell {
     
     let elementView = UIView()
     
-    let elementPadding = 20
-    let innerPadding = 10
+    let elementPadding: CGFloat = 20
+    let innerPadding: CGFloat = 10
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        configureElementView()
     }
     
     required init?(coder: NSCoder) {
@@ -32,9 +33,14 @@ class StatBoxCell: UICollectionViewCell, SelfConfiguringCell {
         elementView.layer.cornerRadius = 20
         elementView.backgroundColor = .systemGroupedBackground
         elementView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(elementView)
         
         NSLayoutConstraint.activate([
-            
+            elementView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
+            elementView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
+            elementView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
+            elementView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -elementPadding),
+
         ])
     }
     

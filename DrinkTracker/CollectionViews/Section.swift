@@ -8,7 +8,7 @@
 import Foundation
 
 struct Section: Hashable {
-    let orderID: Int
+    let id: Int
     let type: String
     let title: String
     let containers: [Container]
