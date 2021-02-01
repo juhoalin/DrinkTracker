@@ -11,9 +11,8 @@ class ButtonsCell: UICollectionViewCell, SelfConfiguringCell {
     
     static var reuseIdentifier: String = "ButtonsCell"
     
-    let inviteButton = DTButton(backgroundColor: .systemGroupedBackground, textColor: .secondaryLabel)
-    let endButton = DTButton(backgroundColor: .systemPink, textColor: .systemBackground)
-    
+    let inviteButton = UIButton(type: .system)
+    let endButton = UIButton(type: .system)
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureButtons()
@@ -24,15 +23,26 @@ class ButtonsCell: UICollectionViewCell, SelfConfiguringCell {
     }
     
     func configure(with container: Container) {
-        
+        endButton.layer.cornerRadius = endButton.frame.height / 3.5
+        inviteButton.layer.cornerRadius = inviteButton.frame.height / 3.5
     }
     
     func configureButtons() {
         inviteButton.setTitle("Invite Friends", for: .normal)
         inviteButton.titleLabel?.textAlignment = .center
+        inviteButton.backgroundColor = .systemGroupedBackground
+        inviteButton.setTitleColor(.secondaryLabel, for: .normal)
+        inviteButton.clipsToBounds = true
+        inviteButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+
+        
         endButton.setTitle("End Session", for: .normal)
+        endButton.setTitleColor(.systemBackground, for: .normal)
         endButton.titleLabel?.textAlignment = .center
         endButton.backgroundColor = UIColor.systemPink.withAlphaComponent(0.7)
+        endButton.clipsToBounds = true
+        endButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+
         
         let stackView = UIStackView(arrangedSubviews: [inviteButton, endButton])
         stackView.translatesAutoresizingMaskIntoConstraints = false

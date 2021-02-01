@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,13 +24,18 @@
 		ECEE4AAF25AA63C600D767E9 /* TrackerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEE4AAE25AA63C600D767E9 /* TrackerVC.swift */; };
 		ECEE4AB225AA648900D767E9 /* StatisticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEE4AB125AA648900D767E9 /* StatisticsVC.swift */; };
 		ECEE4AB525AA65A100D767E9 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEE4AB425AA65A100D767E9 /* SettingsVC.swift */; };
+		ECF3727825C8073500C9195E /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3727725C8073500C9195E /* ChartView.swift */; };
 		ECF92E6C25AD16B60072F92C /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF92E6B25AD16B60072F92C /* SelfConfiguringCell.swift */; };
 		ECF92E6F25AD172E0072F92C /* PromilleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF92E6E25AD172E0072F92C /* PromilleCell.swift */; };
 		ECF92E7425AD23080072F92C /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF92E7325AD23080072F92C /* Section.swift */; };
 		ECF92E7725AD237D0072F92C /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF92E7625AD237D0072F92C /* Container.swift */; };
+		EE73154F276CE2382990D063 /* Pods_DrinkTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A7C399F8E48F2D370AA2E9 /* Pods_DrinkTracker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44A7C399F8E48F2D370AA2E9 /* Pods_DrinkTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DrinkTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9920803E868C6AC1B67DAA59 /* Pods-DrinkTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrinkTracker.release.xcconfig"; path = "Target Support Files/Pods-DrinkTracker/Pods-DrinkTracker.release.xcconfig"; sourceTree = "<group>"; };
+		A8968C0DC6DED7AB98951959 /* Pods-DrinkTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrinkTracker.debug.xcconfig"; path = "Target Support Files/Pods-DrinkTracker/Pods-DrinkTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		EC1A377125C369B80076C82A /* PromilleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromilleLabel.swift; sourceTree = "<group>"; };
 		EC31484A25C491580049E125 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		EC31484D25C492020049E125 /* ButtonsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsCell.swift; sourceTree = "<group>"; };
@@ -50,6 +55,7 @@
 		ECEE4AAE25AA63C600D767E9 /* TrackerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerVC.swift; sourceTree = "<group>"; };
 		ECEE4AB125AA648900D767E9 /* StatisticsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsVC.swift; sourceTree = "<group>"; };
 		ECEE4AB425AA65A100D767E9 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		ECF3727725C8073500C9195E /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		ECF92E6B25AD16B60072F92C /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
 		ECF92E6E25AD172E0072F92C /* PromilleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromilleCell.swift; sourceTree = "<group>"; };
 		ECF92E7325AD23080072F92C /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
@@ -61,12 +67,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE73154F276CE2382990D063 /* Pods_DrinkTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F09D087A2A2725ADA5E4915 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44A7C399F8E48F2D370AA2E9 /* Pods_DrinkTracker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF150F7255DA1641A841846B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A8968C0DC6DED7AB98951959 /* Pods-DrinkTracker.debug.xcconfig */,
+				9920803E868C6AC1B67DAA59 /* Pods-DrinkTracker.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EC1A377025C369710076C82A /* Items */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +113,8 @@
 			children = (
 				ECEE4A8F25AA5BB600D767E9 /* DrinkTracker */,
 				ECEE4A8E25AA5BB600D767E9 /* Products */,
+				CF150F7255DA1641A841846B /* Pods */,
+				8F09D087A2A2725ADA5E4915 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +141,7 @@
 				EC1A377025C369710076C82A /* Items */,
 				EC31484525C4912C0049E125 /* Data */,
 				ECEE4ABB25AA76BC00D767E9 /* Tools */,
+				ECF3727525C806C600C9195E /* Custom Views */,
 			);
 			path = DrinkTracker;
 			sourceTree = "<group>";
@@ -160,6 +187,14 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		ECF3727525C806C600C9195E /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				ECF3727725C8073500C9195E /* ChartView.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,9 +202,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ECEE4AA125AA5BB700D767E9 /* Build configuration list for PBXNativeTarget "DrinkTracker" */;
 			buildPhases = (
+				559447E8428B7F95B35153B3 /* [CP] Check Pods Manifest.lock */,
 				ECEE4A8925AA5BB500D767E9 /* Sources */,
 				ECEE4A8A25AA5BB500D767E9 /* Frameworks */,
 				ECEE4A8B25AA5BB500D767E9 /* Resources */,
+				64C18906BC1173EE00E17B82 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -224,6 +261,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		559447E8428B7F95B35153B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DrinkTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64C18906BC1173EE00E17B82 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DrinkTracker/Pods-DrinkTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DrinkTracker/Pods-DrinkTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DrinkTracker/Pods-DrinkTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ECEE4A8925AA5BB500D767E9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -232,6 +311,7 @@
 				EC4BA95225C37E80003A75F3 /* DTButton.swift in Sources */,
 				ECEE4AAC25AA5F0500D767E9 /* Constants.swift in Sources */,
 				ECF92E7725AD237D0072F92C /* Container.swift in Sources */,
+				ECF3727825C8073500C9195E /* ChartView.swift in Sources */,
 				ECEE4AA825AA5C9000D767E9 /* TabBar.swift in Sources */,
 				EC71152C25AE6A650061C9BA /* StatBoxCell.swift in Sources */,
 				EC3F655025C0C763009AB5BE /* FriendCell.swift in Sources */,
@@ -383,6 +463,7 @@
 		};
 		ECEE4AA225AA5BB700D767E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8968C0DC6DED7AB98951959 /* Pods-DrinkTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -402,6 +483,7 @@
 		};
 		ECEE4AA325AA5BB700D767E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9920803E868C6AC1B67DAA59 /* Pods-DrinkTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
