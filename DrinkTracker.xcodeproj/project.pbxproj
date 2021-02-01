@@ -14,6 +14,7 @@
 		EC4BA95225C37E80003A75F3 /* DTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BA95125C37E80003A75F3 /* DTButton.swift */; };
 		EC71152925AE0EF10061C9BA /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC71152825AE0EF10061C9BA /* SectionHeader.swift */; };
 		EC71152C25AE6A650061C9BA /* StatBoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC71152B25AE6A650061C9BA /* StatBoxCell.swift */; };
+		ECBF577225C8B2C900251A2A /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBF577125C8B2C900251A2A /* StatView.swift */; };
 		ECEE4A9125AA5BB600D767E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEE4A9025AA5BB600D767E9 /* AppDelegate.swift */; };
 		ECEE4A9325AA5BB600D767E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEE4A9225AA5BB600D767E9 /* SceneDelegate.swift */; };
 		ECEE4A9525AA5BB600D767E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEE4A9425AA5BB600D767E9 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 		ECEE4AB225AA648900D767E9 /* StatisticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEE4AB125AA648900D767E9 /* StatisticsVC.swift */; };
 		ECEE4AB525AA65A100D767E9 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEE4AB425AA65A100D767E9 /* SettingsVC.swift */; };
 		ECF3727825C8073500C9195E /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3727725C8073500C9195E /* ChartView.swift */; };
+		ECF3727B25C8086500C9195E /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3727A25C8086500C9195E /* ChartCell.swift */; };
 		ECF92E6C25AD16B60072F92C /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF92E6B25AD16B60072F92C /* SelfConfiguringCell.swift */; };
 		ECF92E6F25AD172E0072F92C /* PromilleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF92E6E25AD172E0072F92C /* PromilleCell.swift */; };
 		ECF92E7425AD23080072F92C /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF92E7325AD23080072F92C /* Section.swift */; };
@@ -43,6 +45,7 @@
 		EC4BA95125C37E80003A75F3 /* DTButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTButton.swift; sourceTree = "<group>"; };
 		EC71152825AE0EF10061C9BA /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		EC71152B25AE6A650061C9BA /* StatBoxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatBoxCell.swift; sourceTree = "<group>"; };
+		ECBF577125C8B2C900251A2A /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
 		ECEE4A8D25AA5BB600D767E9 /* DrinkTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECEE4A9025AA5BB600D767E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECEE4A9225AA5BB600D767E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +59,7 @@
 		ECEE4AB125AA648900D767E9 /* StatisticsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsVC.swift; sourceTree = "<group>"; };
 		ECEE4AB425AA65A100D767E9 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		ECF3727725C8073500C9195E /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		ECF3727A25C8086500C9195E /* ChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
 		ECF92E6B25AD16B60072F92C /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
 		ECF92E6E25AD172E0072F92C /* PromilleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromilleCell.swift; sourceTree = "<group>"; };
 		ECF92E7325AD23080072F92C /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 				EC71152B25AE6A650061C9BA /* StatBoxCell.swift */,
 				EC3F654F25C0C763009AB5BE /* FriendCell.swift */,
 				EC31484D25C492020049E125 /* ButtonsCell.swift */,
+				ECF3727A25C8086500C9195E /* ChartCell.swift */,
 			);
 			path = CollectionViews;
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				ECF3727725C8073500C9195E /* ChartView.swift */,
+				ECBF577125C8B2C900251A2A /* StatView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -308,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECBF577225C8B2C900251A2A /* StatView.swift in Sources */,
 				EC4BA95225C37E80003A75F3 /* DTButton.swift in Sources */,
 				ECEE4AAC25AA5F0500D767E9 /* Constants.swift in Sources */,
 				ECF92E7725AD237D0072F92C /* Container.swift in Sources */,
@@ -323,6 +330,7 @@
 				ECEE4AB525AA65A100D767E9 /* SettingsVC.swift in Sources */,
 				ECF92E6C25AD16B60072F92C /* SelfConfiguringCell.swift in Sources */,
 				EC31484B25C491580049E125 /* MockData.swift in Sources */,
+				ECF3727B25C8086500C9195E /* ChartCell.swift in Sources */,
 				ECEE4A9125AA5BB600D767E9 /* AppDelegate.swift in Sources */,
 				ECEE4A9325AA5BB600D767E9 /* SceneDelegate.swift in Sources */,
 				ECF92E6F25AD172E0072F92C /* PromilleCell.swift in Sources */,

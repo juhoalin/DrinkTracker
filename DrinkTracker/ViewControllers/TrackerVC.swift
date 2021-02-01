@@ -37,6 +37,7 @@ class TrackerVC: UIViewController {
         view.addSubview(collectionView)
         
         collectionView.register(PromilleCell.self, forCellWithReuseIdentifier: PromilleCell.reuseIdentifier)
+        collectionView.register(ChartCell.self, forCellWithReuseIdentifier: ChartCell.reuseIdentifier)
         collectionView.register(StatBoxCell.self, forCellWithReuseIdentifier: StatBoxCell.reuseIdentifier)
         collectionView.register(FriendCell.self, forCellWithReuseIdentifier: FriendCell.reuseIdentifier)
         collectionView.register(ButtonsCell.self, forCellWithReuseIdentifier: ButtonsCell.reuseIdentifier)
@@ -58,6 +59,8 @@ class TrackerVC: UIViewController {
     func createDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, Container>(collectionView: collectionView) { collectionView, indexPath, container in
             switch self.sections[indexPath.section].type {
+            case "chartSection":
+                return self.configure(cellType: ChartCell.self, with: container, for: indexPath)
             case "statBoxSection":
                 return self.configure(cellType: StatBoxCell.self, with: container, for: indexPath)
             case "friendSection":
@@ -108,6 +111,8 @@ class TrackerVC: UIViewController {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
             let section = self.sections[sectionIndex]
             switch section.type {
+            case "chartSection":
+                return self.createChartSection(using: section)
             case "statBoxSection":
                 return self.createStatBoxSection(using: section)
             case "friendSection":
@@ -139,6 +144,20 @@ class TrackerVC: UIViewController {
         return layoutSection
     }
     
+    func createChartSection(using: Section) -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
+                
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.89), heightDimension: .estimated(200))
+        let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [layoutItem])
+        layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 20)
+                
+        let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
+        layoutSection.orthogonalScrollingBehavior = .groupPaging
+        layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 20, trailing: 0)
+        
+        return layoutSection
+    }
     
     func createStatBoxSection(using section: Section) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))

@@ -24,7 +24,7 @@ class SectionHeader: UICollectionReusableView {
         separator2.translatesAutoresizingMaskIntoConstraints = false
         separatator.backgroundColor = .systemBackground
         
-        title.textColor = .secondaryLabel
+        title.textColor = .label
         title.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 28, weight: .bold))
         
         let stackView = UIStackView(arrangedSubviews: [separatator, title, separator2])
