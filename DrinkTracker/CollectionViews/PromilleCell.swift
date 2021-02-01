@@ -12,7 +12,7 @@ class PromilleCell: UICollectionViewCell, SelfConfiguringCell {
     static var reuseIdentifier: String = "PromilleCell"
     
     let elementView = UIView()
-    let numberLabel = UILabel()
+    let numberLabel = PromilleLabel()
     let infoLabel = UILabel()
     let addButton = UIButton(type: .custom)
     let infostackView = UIStackView()
@@ -27,6 +27,7 @@ class PromilleCell: UICollectionViewCell, SelfConfiguringCell {
         configureInfoLabel()
         configureInfoStackView()
         configureAddButton()
+        self.contentView.isUserInteractionEnabled = true
     }
     
     required init?(coder: NSCoder) {
@@ -34,7 +35,8 @@ class PromilleCell: UICollectionViewCell, SelfConfiguringCell {
     }
     
     func configure(with container: Container) {
-        let attString1 = NSMutableAttributedString(string: "\(container.floatValue ?? 0.0) ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 70, weight: .heavy), NSAttributedString.Key.foregroundColor: UIColor.systemGreen])
+        numberLabel.updateColor(with: container.floatValue ?? 0.0)
+        let attString1 = NSMutableAttributedString(string: "\(container.floatValue ?? 0.0) ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 70, weight: .heavy)])
         let attString2 = NSMutableAttributedString(string: "‰", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 50, weight: .bold), NSAttributedString.Key.foregroundColor: UIColor.secondaryLabel])
         attString1.append(attString2)
         numberLabel.attributedText = attString1
@@ -55,9 +57,9 @@ class PromilleCell: UICollectionViewCell, SelfConfiguringCell {
     }
     
     func configureNumberLabel() {
-        numberLabel.font = UIFont.systemFont(ofSize: 45, weight: .heavy)
-        numberLabel.textColor = .label
-        numberLabel.adjustsFontSizeToFitWidth = true
+//        numberLabel.font = UIFont.systemFont(ofSize: 45, weight: .heavy)
+//        numberLabel.textColor = .label
+//        numberLabel.adjustsFontSizeToFitWidth = true
         elementView.addSubview(numberLabel)
     }
     

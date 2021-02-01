@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC5515FC25B0F093002E2F3E /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5515FB25B0F093002E2F3E /* FriendCell.swift */; };
+		EC1A377225C369B80076C82A /* PromilleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1A377125C369B80076C82A /* PromilleLabel.swift */; };
+		EC31484B25C491580049E125 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC31484A25C491580049E125 /* MockData.swift */; };
+		EC31484E25C492020049E125 /* ButtonsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC31484D25C492020049E125 /* ButtonsCell.swift */; };
+		EC3F655025C0C763009AB5BE /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3F654F25C0C763009AB5BE /* FriendCell.swift */; };
+		EC4BA95225C37E80003A75F3 /* DTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BA95125C37E80003A75F3 /* DTButton.swift */; };
 		EC71152925AE0EF10061C9BA /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC71152825AE0EF10061C9BA /* SectionHeader.swift */; };
 		EC71152C25AE6A650061C9BA /* StatBoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC71152B25AE6A650061C9BA /* StatBoxCell.swift */; };
 		ECEE4A9125AA5BB600D767E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEE4A9025AA5BB600D767E9 /* AppDelegate.swift */; };
@@ -27,7 +31,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EC5515FB25B0F093002E2F3E /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		EC1A377125C369B80076C82A /* PromilleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromilleLabel.swift; sourceTree = "<group>"; };
+		EC31484A25C491580049E125 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		EC31484D25C492020049E125 /* ButtonsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsCell.swift; sourceTree = "<group>"; };
+		EC3F654F25C0C763009AB5BE /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		EC4BA95125C37E80003A75F3 /* DTButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTButton.swift; sourceTree = "<group>"; };
 		EC71152825AE0EF10061C9BA /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		EC71152B25AE6A650061C9BA /* StatBoxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatBoxCell.swift; sourceTree = "<group>"; };
 		ECEE4A8D25AA5BB600D767E9 /* DrinkTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +67,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC1A377025C369710076C82A /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				EC1A377125C369B80076C82A /* PromilleLabel.swift */,
+				EC4BA95125C37E80003A75F3 /* DTButton.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		EC31484525C4912C0049E125 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				EC31484A25C491580049E125 /* MockData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		ECEE4A8425AA5BB500D767E9 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +112,8 @@
 				ECEE4ABC25AA76F900D767E9 /* Navigation */,
 				ECEE4AB725AA660A00D767E9 /* ViewControllers */,
 				ECEE4ABA25AA76A500D767E9 /* CollectionViews */,
+				EC1A377025C369710076C82A /* Items */,
+				EC31484525C4912C0049E125 /* Data */,
 				ECEE4ABB25AA76BC00D767E9 /* Tools */,
 			);
 			path = DrinkTracker;
@@ -111,7 +138,8 @@
 				ECF92E7625AD237D0072F92C /* Container.swift */,
 				EC71152825AE0EF10061C9BA /* SectionHeader.swift */,
 				EC71152B25AE6A650061C9BA /* StatBoxCell.swift */,
-				EC5515FB25B0F093002E2F3E /* FriendCell.swift */,
+				EC3F654F25C0C763009AB5BE /* FriendCell.swift */,
+				EC31484D25C492020049E125 /* ButtonsCell.swift */,
 			);
 			path = CollectionViews;
 			sourceTree = "<group>";
@@ -201,20 +229,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC4BA95225C37E80003A75F3 /* DTButton.swift in Sources */,
 				ECEE4AAC25AA5F0500D767E9 /* Constants.swift in Sources */,
 				ECF92E7725AD237D0072F92C /* Container.swift in Sources */,
 				ECEE4AA825AA5C9000D767E9 /* TabBar.swift in Sources */,
 				EC71152C25AE6A650061C9BA /* StatBoxCell.swift in Sources */,
-				EC5515FC25B0F093002E2F3E /* FriendCell.swift in Sources */,
+				EC3F655025C0C763009AB5BE /* FriendCell.swift in Sources */,
 				ECEE4A9525AA5BB600D767E9 /* ViewController.swift in Sources */,
+				EC1A377225C369B80076C82A /* PromilleLabel.swift in Sources */,
 				ECEE4AAF25AA63C600D767E9 /* TrackerVC.swift in Sources */,
 				ECF92E7425AD23080072F92C /* Section.swift in Sources */,
 				ECEE4AB225AA648900D767E9 /* StatisticsVC.swift in Sources */,
 				ECEE4AB525AA65A100D767E9 /* SettingsVC.swift in Sources */,
 				ECF92E6C25AD16B60072F92C /* SelfConfiguringCell.swift in Sources */,
+				EC31484B25C491580049E125 /* MockData.swift in Sources */,
 				ECEE4A9125AA5BB600D767E9 /* AppDelegate.swift in Sources */,
 				ECEE4A9325AA5BB600D767E9 /* SceneDelegate.swift in Sources */,
 				ECF92E6F25AD172E0072F92C /* PromilleCell.swift in Sources */,
+				EC31484E25C492020049E125 /* ButtonsCell.swift in Sources */,
 				EC71152925AE0EF10061C9BA /* SectionHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

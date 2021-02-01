@@ -12,6 +12,8 @@ class StatBoxCell: UICollectionViewCell, SelfConfiguringCell {
     static var reuseIdentifier: String = "StatBoxCell"
     
     let elementView = UIView()
+    let desc = UILabel()
+    let numberOfDrinks = UILabel()
     
     let elementPadding: CGFloat = 20
     let innerPadding: CGFloat = 10
@@ -19,6 +21,7 @@ class StatBoxCell: UICollectionViewCell, SelfConfiguringCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureElementView()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -26,6 +29,8 @@ class StatBoxCell: UICollectionViewCell, SelfConfiguringCell {
     }
     
     func configure(with container: Container) {
+        let toInt = Int(container.floatValue ?? 0.0)
+        createNumberOfDrinkLabel(drinks: toInt, str: container.stringValue)
         
     }
     
@@ -44,5 +49,31 @@ class StatBoxCell: UICollectionViewCell, SelfConfiguringCell {
         ])
     }
     
+    func createNumberOfDrinkLabel(drinks: Int?, str: String?) {
+        desc.text = str
+        desc.font = .preferredFont(forTextStyle: .headline)
+        desc.textColor = .secondaryLabel
+        desc.textAlignment = .center
+        numberOfDrinks.font = UIFont.systemFont(ofSize: 70, weight: .bold)
+        numberOfDrinks.adjustsFontSizeToFitWidth = true
+        numberOfDrinks.textColor = .label
+        numberOfDrinks.text = "\(drinks ?? 0)"
+        numberOfDrinks.textAlignment = .center
+        
+        let stackView = UIStackView(arrangedSubviews: [numberOfDrinks, desc])
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        elementView.addSubview(stackView)
+        
+        NSLayoutConstraint.activate([
+            stackView.centerXAnchor.constraint(equalTo: elementView.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: elementView.centerYAnchor),
+            stackView.heightAnchor.constraint(lessThanOrEqualTo: elementView.heightAnchor, multiplier: 0.80),
+            stackView.widthAnchor.constraint(lessThanOrEqualTo: elementView.widthAnchor, multiplier: 0.80),
+
+        ])
+        
+    }
     
 }

@@ -18,25 +18,32 @@ class SectionHeader: UICollectionReusableView {
         
         let separatator = UIView(frame: .zero)
         separatator.translatesAutoresizingMaskIntoConstraints = false
-        separatator.backgroundColor = .quaternaryLabel
+        separatator.backgroundColor = .systemBackground
+        
+        let separator2 = UIView(frame: .zero)
+        separator2.translatesAutoresizingMaskIntoConstraints = false
+        separatator.backgroundColor = .systemBackground
         
         title.textColor = .secondaryLabel
         title.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 28, weight: .bold))
         
-        let stackView = UIStackView(arrangedSubviews: [title])
+        let stackView = UIStackView(arrangedSubviews: [separatator, title, separator2])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         addSubview(stackView)
         
         NSLayoutConstraint.activate([
             separatator.heightAnchor.constraint(equalToConstant: 1),
+            separator2.heightAnchor.constraint(equalToConstant: 1),
+            
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             stackView.topAnchor.constraint(equalTo: topAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
         
-        stackView.setCustomSpacing(10, after: separatator)
+        stackView.setCustomSpacing(15, after: separatator)
+        stackView.setCustomSpacing(5, after: title)
         
     }
     

@@ -12,3 +12,4 @@ struct Container: Hashable {
     let floatValue: Float?
     let stringValue: String?
 }
+
