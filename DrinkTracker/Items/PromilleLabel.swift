@@ -29,13 +29,15 @@ class PromilleLabel: UILabel {
         self.promille = promille
         switch self.promille {
         case 0...0.4:
-            textColor = .systemGreen
+            textColor = #colorLiteral(red: 0, green: 0.6945462823, blue: 0.3402124643, alpha: 1)
         case 0.5..<1.5:
-            textColor = .systemOrange
+            textColor = #colorLiteral(red: 1, green: 0.5915690064, blue: 0, alpha: 1)
         case 1.5..<2.5:
-            textColor = .systemPink
+            textColor = #colorLiteral(red: 0.895187676, green: 0.2828083038, blue: 0, alpha: 1)
         default:
-            textColor = .systemRed
+            textColor = #colorLiteral(red: 0.8189412951, green: 0.1537796855, blue: 0.1175208464, alpha: 1)
+
+            
         }
     }
 

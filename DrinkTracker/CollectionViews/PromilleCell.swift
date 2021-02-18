@@ -14,7 +14,7 @@ class PromilleCell: UICollectionViewCell, SelfConfiguringCell {
     let elementView = UIView()
     let numberLabel = PromilleLabel()
     let infoLabel = UILabel()
-    let addButton = UIButton(type: .custom)
+    let addButton = UIButton(type: .system)
     let infostackView = UIStackView()
     
     let elementPadding: CGFloat = 20
@@ -87,8 +87,9 @@ class PromilleCell: UICollectionViewCell, SelfConfiguringCell {
     }
     
     func configureAddButton() {
-        let iconConfig = UIImage.SymbolConfiguration(pointSize: 70, weight: .bold)
+        let iconConfig = UIImage.SymbolConfiguration(pointSize: 70, weight: .heavy)
         addButton.setImage(UIImage.init(systemName: "plus", withConfiguration: iconConfig), for: .normal)
+        addButton.imageView?.contentMode = .scaleAspectFit
         addButton.tintColor = .label
         addButton.showsTouchWhenHighlighted = true
         addButton.addTarget(self, action: #selector(addButtonAction), for: .touchUpInside)

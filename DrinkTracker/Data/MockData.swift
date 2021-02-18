@@ -11,7 +11,7 @@ import Charts
 struct MockData {
         
     static var sections = [
-        Section(id: 1, type: "promilleSection", title: "You", containers: [Container(id: 0, floatValue: 0.7, stringValue: nil, customView: nil)]),
+        Section(id: 1, type: "promilleSection", title: "You", containers: [Container(id: 0, floatValue: 0.4, stringValue: nil, customView: nil)]),
         
         Section(id: 2, type: "chartSection", title: "Stats", containers: [
             Container(id: 1, floatValue: nil, stringValue: nil, customView: ChartView()),

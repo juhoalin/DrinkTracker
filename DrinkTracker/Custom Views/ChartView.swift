@@ -94,6 +94,11 @@ class ChartView: UIView, ChartViewDelegate {
         set1.mode = .linear
         set1.lineWidth = 3.3
         set1.setColor(.systemBlue)
+        let gradientColors = [UIColor.systemBlue.cgColor, UIColor.clear.cgColor] as CFArray // Colors of the gradient
+        let colorLocations:[CGFloat] = [0.7, 0.0] // Positioning of the gradient
+        let gradient = CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradientColors, locations: colorLocations) // Gradient Object
+        set1.fill = Fill.fillWithLinearGradient(gradient!, angle: 90.0) // Set the Gradient
+        set1.drawFilledEnabled = true // Draw the Gradient
         set1.label = ""
         set1.highlightEnabled = true
         set1.lineCapType = .round
